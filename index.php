@@ -5,8 +5,8 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     //' or true-- 
-    //$username = mysqli_real_escape_string($con,$username);
-    //$password = mysqli_real_escape_string($con,$password);
+    $username = mysqli_real_escape_string($con,$username);
+    $password = mysqli_real_escape_string($con,$password);
     $password = md5($password);
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 
